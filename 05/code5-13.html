@@ -1,0 +1,18 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <last-feed v-once :comment="msg"></last-feed>
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            msg: '오늘 날씨가 참 좋네요'
+        },
+        components: {
+            'last-feed': {
+                template: '<div>{{ comment }}</div>',
+                props: ['comment']
+            }
+        }
+    });
+</script>

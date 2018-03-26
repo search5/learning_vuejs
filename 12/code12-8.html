@@ -1,0 +1,21 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="example">
+    <simple-counter></simple-counter>
+    <simple-counter></simple-counter>
+    <simple-counter></simple-counter>
+</div>
+<script>
+    Vue.component('simple-counter', {
+        template: '<button v-on:click="counter += 1">{{ counter }}</button>',
+        // 각 컴포넌트 인스턴스에 같은 객체 참조를 반환합니다.
+        data: function () {
+            return {
+                counter: 0
+            }
+        }
+    })
+
+    new Vue({
+        el: '#example'
+    })
+</script>

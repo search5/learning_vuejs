@@ -1,0 +1,19 @@
+<script src="https://unpkg.com/vuex"></script>
+<script>
+    const store = new Vuex.Store({
+        state: {
+            count: 0
+        },
+        mutations: {
+            increment(state) {
+                state.count++
+            }
+        },
+        actions: {
+            increment({ commit }, increment_value) {
+                console.log("액션 메서드 호출과 함께 전달된 값: " + increment_value)
+                commit('increment')
+            }
+        }
+    })
+</script>

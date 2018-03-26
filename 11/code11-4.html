@@ -1,0 +1,13 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <input type="checkbox" id="checkbox" v-model="checked">
+    <label for="checkbox">{{ checked }}</label>
+</div>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            checked: true
+        }
+    });
+</script>

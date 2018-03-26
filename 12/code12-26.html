@@ -1,0 +1,18 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <my-component v-on:click.native="doTheThing"></my-component>
+</div>
+<script>
+    Vue.component('my-component', {
+        template: '<button>버튼</button>'
+    });
+
+    new Vue({
+        el: '#app',
+        methods: {
+            doTheThing: function (event) {
+                console.log(event);
+            }
+        }
+    });
+</script>

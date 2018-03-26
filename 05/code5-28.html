@@ -1,0 +1,17 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    {{ write_date | date }}
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            write_date: new Date()
+        },
+        filters: {
+            date: function (entry) {
+                return dateFns.format(entry, '오늘은 dddd 입니다');
+            }
+        }
+    });
+</script>

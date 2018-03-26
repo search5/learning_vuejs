@@ -1,0 +1,14 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <span>{{ "HELLO" | lowercase }}</span>
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        filters: {
+            lowercase: function (text) {
+                return text.toLowerCase()
+            }
+        }
+    });
+</script>

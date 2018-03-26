@@ -1,0 +1,12 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <a href="flask.moe" v-bind:href="href">한빛미디어</a>
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            href: 'http://www.hanbit.co.kr'
+        }
+    });
+</script>

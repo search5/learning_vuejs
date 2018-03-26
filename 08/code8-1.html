@@ -1,0 +1,12 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="example">
+    {{ message.split('').reverse().join('') }}
+</div>
+<script>
+    new Vue({
+        el: '#example',
+        data: {
+            message: 'Hello Vue.JS World'
+        }
+    });
+</script>

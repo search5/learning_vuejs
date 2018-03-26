@@ -1,0 +1,13 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="example">
+    <my-component></my-component>
+</div>
+<script>
+    Vue.component('my-component', {
+        template: '<div>사용자화 컴포넌트입니다!</div>'
+    });
+
+    new Vue({
+        el: "#example"
+    });
+</script>

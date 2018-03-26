@@ -1,0 +1,19 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <div v-bind:style="[baseStyles, overridingStyles]">abc</div>
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            baseStyles: {
+                color: 'red',
+                fontSize: '13px'
+            },
+            overridingStyles: {
+                color: 'green',
+                fontSize: '9px'
+            }
+        }
+    });
+</script>

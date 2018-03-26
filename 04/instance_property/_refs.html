@@ -1,0 +1,17 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="hello"></div>
+
+<script type="text/x-template" id="hello_tmpl">
+    <p ref="p_test"></p>
+    <custom_component ref="custom_test"></custom_component>
+</script>
+
+<script>
+var vm = new Vue({
+    el: "#hello",
+});
+
+Vue.component('custom_component', {
+  template: '#hello_tmpl'
+});
+</script>

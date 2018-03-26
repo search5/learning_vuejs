@@ -1,0 +1,16 @@
+<script src="http://unpkg.com/vuex"></script>
+<script>
+    const one_store = new Vuex.Store({
+        state: {
+            todos: [
+                { id: 1, text: '논문 쓰기', done: true },
+                { id: 2, text: '책 쓰기', done: false }
+            ]
+        },
+        getters: {
+            doneTodos: state => {
+                return state.todos.filter(todo => todo.done)
+            }
+        }
+    })
+</script>

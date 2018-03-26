@@ -1,0 +1,14 @@
+<script src="http://unpkg.com/vuex"></script>
+<script>
+    const store = new Vuex.Store({
+        state: {
+            count: 1
+        },
+        mutations: {
+            increment(state) {
+                // 상태 변이
+                state.count++
+            }
+        }
+    })
+</script>

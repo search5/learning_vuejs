@@ -1,0 +1,56 @@
+<script src="http://unpkg.com/vue"></script>
+<script src="http://unpkg.com/vuex"></script>
+<div id="app">
+    <ul>
+        <li v-for="item in todos" v-if="item.done">{{ item.text }}</li>
+    </ul>
+</div>
+<script>
+    const DONE_COUNT = 'todos/DONE_COUNT'
+    const FETCH_ALL = 'todos/FETCH_ALL'
+    const TOGGLE_DONE = 'todos/TOGGLE_DONE'
+
+    const todosModule = {
+        state: {
+            todos: [
+                { id: 1, text: '논문 쓰기', done: false },
+                { id: 2, text: '이중민 과장님 죄송해요', done: true }
+            ]
+        },
+        getters: {
+            [DONE_COUNT](state) {
+                return state.todos.filter(todo => todo.done)
+            }
+        },
+        actions: {
+            [FETCH_ALL](context, payload) {
+                context.commit(TOGGLE_DONE, payload);
+            }
+        },
+        mutations: {
+            [TOGGLE_DONE](state, payload) {
+                state.todos[payload.index].done = payload.done
+            }
+        }
+    }
+
+    const store = new Vuex.Store({
+        modules: {
+            todo: todosModule
+        }
+    });
+
+    var vm = new Vue({
+        el: "#app",
+        store: store,
+        computed: {
+            ...Vuex.mapGetters([DONE_COUNT]),
+            ...Vuex.mapState({
+                todos: root_module => root_module.todo.todos
+            })
+        },
+        methods: {
+            ...Vuex.mapActions([FETCH_ALL])
+        }
+    });
+</script>

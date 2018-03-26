@@ -1,0 +1,23 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <dl>
+        <template v-for="item in items">
+            <dt>{{ item.msg }}</dt>
+            <dd>{{ item.id }}</dd>
+        </template>
+    </dl>
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            items: [{
+                id: 1,
+                msg: 'Hello Vue'
+            }, {
+                id: 2,
+                msg: 'Hello React?'
+            }]
+        }
+    });
+</script>

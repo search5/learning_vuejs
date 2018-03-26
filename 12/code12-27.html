@@ -1,0 +1,27 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <comp :foo.sync="bar"></comp>
+</div>
+<script>
+    Vue.component('comp', {
+        template: '<input v-on:keyup="update" v-model="foo_internal">',
+        props: ["foo"],
+        data: function () {
+            return {
+                "foo_internal": this.foo
+            }
+        },
+        methods: {
+            update: function () {
+                this.$emit("update:foo", this.foo_internal);
+            }
+        }
+    });
+
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            bar: "hi2"
+        }
+    });
+</script>

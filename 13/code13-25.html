@@ -1,0 +1,23 @@
+<script src="http://unpkg.com/vue"></script>
+<script src="http://unpkg.com/vuex"></script>
+<script>
+    var store = new Vuex.Store({
+        state: {
+            lucky: 0
+        },
+        mutations: {
+            sync_mutation(state) {
+                console.log(state.lucky);
+            }
+        }
+    });
+
+    var vm = new Vue({
+        store: store,
+        methods: {
+            ...Vuex.mapMutations({
+                alias_sync_mutation: 'sync_mutation'
+            })
+        }
+    });
+</script>

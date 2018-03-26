@@ -1,0 +1,15 @@
+<script src="http://unpkg.com/vuex"></script>
+<script>
+    const SOME_MUTATION = 'SOME_MUTATION';
+
+    var store = new Vuex.Store({
+        state: {
+            lucky: 0
+        },
+        mutations: {
+            [SOME_MUTATION](state) {
+                console.log(state.lucky);
+            }
+        }
+    });
+</script>

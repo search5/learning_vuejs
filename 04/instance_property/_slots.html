@@ -1,0 +1,29 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <h1>나는 부모 컴포넌트의 제목입니다.</h1>
+    <my-component></my-component>
+</div>
+<script>
+Vue.component('my-component', {
+    template: `\
+    <div>\
+        <h1 v-if="level === 1">\
+            <slot>\
+                제공된 컨텐츠가 없을 때만 볼 수 있습니다.\
+            </slot>\
+        </h1>\
+        <h2 v-if="level === 2">\
+            <slot>
+                제공된 컨텐츠가 없을 때만 볼 수 있습니다.\
+            </slot>\
+        </h2>\
+    </div>`
+});
+
+var app = new Vue({
+    el: '#app',
+    data: {
+        level: 2
+    }
+});
+</script>

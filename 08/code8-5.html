@@ -1,0 +1,23 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="example">
+    <p>역순 문자열: {{ msg_reverse }}</p>
+    <p ref="tester"></p>
+</div>
+<script>
+    var vm = new Vue({
+        el: '#example',
+        data: {
+            msg: "같이 뛰자. 우리 함께 뛰자."
+        },
+        computed: {
+            msg_reverse: function () {
+                return this.msg.split('').reverse().join('');
+            }
+        },
+        methods: {
+            show: function () {
+                this.$refs.tester.innerHTML = this.msg_reverse;
+            }
+        }
+    });
+</script>

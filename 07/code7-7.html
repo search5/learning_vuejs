@@ -1,0 +1,23 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <template v-if="id == 1">
+        <span>값은</span>
+        <span>1입니다</span>
+    </template>
+    <template v-else-if="id == 2">
+        <span>값은</span>
+        <span>2입니다</span>
+    </template>
+    <template v-else>
+        <span>값은</span>
+        <span>1 또는 2가 아닙니다</span>
+    </template>
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            id: 2
+        }
+    });
+</script>

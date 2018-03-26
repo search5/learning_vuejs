@@ -1,0 +1,30 @@
+<script src="https://unpkg.com/vue"></script>
+<style type="text/css">
+    span.active {
+        border: solid 1px blue;
+    }
+
+    span.text-danger {
+        color: magenta;
+    }
+</style>
+<div id="app">
+    <span v-bind:class="classObject">classObject를 계산된 속성에서 읽습니다</span>
+</div>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            isActive: true,
+            error: null
+        },
+        computed: {
+            classObject: function () {
+                return {
+                    active: this.isActive && !this.error,
+                    'text-danger': this.error && this.error.type === 'fatal'
+                }
+            }
+        }
+    });
+</script>

@@ -1,0 +1,26 @@
+<script src="http://unpkg.com/vue"></script>
+<script src="http://unpkg.com/vue-router"></script>
+<div id="app">
+    <h1>Hello App!</h1>
+    <p>
+        <router-link to="/vue">Go to Vue.js</router-link>
+        <router-link to="/react">Go to React.js</router-link>
+    </p>
+    <router-view></router-view>
+</div>
+<script>
+    const Comp1 = { template: '<div>vue</div>' }
+    const Comp2 = { template: '<div>react</div>' }
+
+    const router = new VueRouter({
+        routes: [
+            { path: '/vue', component: Comp1 },
+            { path: '/react', component: Comp2 }
+        ]
+    })
+
+    const app = new Vue({
+        el: "#app",
+        router: router
+    })
+</script>

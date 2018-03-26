@@ -1,0 +1,28 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="example">
+    <table>
+        <tr is="my-row">
+            <td is="my-cell">123</td>
+            <td is="my-cell">456</td>
+        </tr>
+    </table>
+</div>
+<script>
+    new Vue({
+        el: "#example",
+        components: {
+            'my-row': {
+                render: function (h) {
+                    return h("tr", this.$slots.default);
+                },
+                components: {
+                    'my-cell': {
+                        render: function (h) {
+                            return h("td", this.$slots.default);
+                        }
+                    }
+                }
+            }
+        }
+    });
+</script>

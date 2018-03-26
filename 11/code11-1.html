@@ -1,0 +1,13 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <input v-model="message" placeholder="edit me">
+    <p>Message is: {{ message }}</p>
+</div>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            message: "여기에는 무엇이 입력되었을까요?"
+        }
+    });
+</script>

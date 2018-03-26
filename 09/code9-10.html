@@ -1,0 +1,23 @@
+<script src="https://unpkg.com/vue"></script>
+<style type="text/css">
+    span.active {
+        border: solid 1px blue;
+    }
+
+    span.text-danger {
+        color: magenta;
+    }
+</style>
+<div id="app">
+    <span v-bind:class="[isActive ? activeClass : '', errorClass]">abc</span>
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            activeClass: 'active',
+            errorClass: 'text-danger',
+            isActive: false
+        }
+    });
+</script>

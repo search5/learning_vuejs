@@ -1,0 +1,19 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="example">
+    <system v-bind:prop-a="123"></system>
+    <system v-bind:prop-a="false"></system>
+</div>
+<script>
+    Vue.component('system', {
+        props: {
+            propA: [Number, Boolean]
+        },
+        render: function (h) {
+            return h('span', this.$slots.default);
+        }
+    });
+
+    new Vue({
+        el: '#example'
+    });
+</script>

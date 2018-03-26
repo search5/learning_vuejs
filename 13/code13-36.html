@@ -1,0 +1,29 @@
+<script src="http://unpkg.com/vuex"></script>
+<script src="http://unpkg.com/underscore"></script>
+<script>
+    const myPluginWithSnapshot = store => {
+        let prevState = _.clone(store.state)
+        store.subscribe((mutation, state) => {
+            let nextState = _.clone(state)
+
+            console.log(prevState);
+            console.log(nextState);
+            // prevState와 nextState를 비교하십시오.
+
+            // 다음 변이를 위한 상태 저장
+            prevState = nextState
+        })
+    }
+
+    const store = new Vuex.Store({
+        state: {
+            dir: 3
+        },
+        mutations: {
+            increment(state) {
+                state.dir = 4
+            }
+        },
+        plugins: [myPluginWithSnapshot]
+    })
+</script>

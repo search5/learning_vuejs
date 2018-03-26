@@ -1,0 +1,16 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="example-4">
+    <button v-on:click="warn('Form cannot be submitted yet.', $event)">Submit</button>
+</div>
+<script type="text/javascript">
+    var vm = new Vue({
+        el: "#example-4",
+        methods: {
+            warn: function (message, event) {
+                // 이제 네이티브 이벤트에 접근할 수 있습니다.
+                if (event) event.preventDefault()
+                alert(message)
+            }
+        }
+    });
+</script>

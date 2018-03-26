@@ -1,0 +1,15 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <input type="checkbox" v-model="toggle" v-bind:true-value="a" v-bind:false-value="b">
+    <span>{{ toggle }}</span>
+</div>
+<script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            toggle: "체크됨",
+            a: "체크됨",
+            b: "체크 해제"
+        }
+    });
+</script>

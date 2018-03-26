@@ -1,0 +1,19 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <child-component></child-component>
+</div>
+<script>
+    new Vue({
+        el: "#app",
+        components: {
+            'child-component': {
+                template: '<div>{{ message }}</div>',
+                data: function () {
+                    return {
+                        message: '안녕하세요.'
+                    }
+                }
+            }
+        }
+    });
+</script>

@@ -1,0 +1,26 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="example">
+    <custom-table></custom-table>
+</div>
+<script>
+    Vue.component('my-row', {
+        render: function (h) {
+            return h("tr", this.$slots.default);
+        }
+    });
+
+    Vue.component('my-cell', {
+        render: function (h) {
+            return h("td", this.$slots.default);
+        }
+    });
+
+    new Vue({
+        el: "#example",
+        components: {
+            'custom-table': {
+                template: "<table><my-row><my-cell>123</my-cell><my-cell>456</my-cell></my-row></table>"
+            }
+        }
+    });
+</script>

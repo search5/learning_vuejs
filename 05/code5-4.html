@@ -1,0 +1,12 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <div v-bind:id="dynamicId"></div>
+</div>
+<script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            dynamicId: "first_div"
+        }
+    });
+</script>

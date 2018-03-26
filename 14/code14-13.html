@@ -1,0 +1,39 @@
+<script src="http://unpkg.com/vue"></script>
+<script src="http://unpkg.com/vue-router"></script>
+<div id="app">
+    <h1>Hello App!</h1>
+    <ul>
+        <li v-for="entry in article" :key="entry.no">
+            <router-link :to="'/board/' + entry.no">Go to {{ entry.title }}</router-link>
+        </li>
+    </ul>
+    <router-view></router-view>
+</div>
+<script>
+    const Comp = {
+        template: '<div>vue {{ no }}</div>',
+        computed: {
+            no: function () {
+                return this.$route.params.no;
+            }
+        }
+    }
+
+    const router = new VueRouter({
+        routes: [
+            { path: '/board/:no', component: Comp },
+        ]
+    })
+
+    const app = new Vue({
+        el: "#app",
+        router: router,
+        data: {
+            article: [
+                { no: 1, title: "Vue.js 책이 출간되었어요." },
+                { no: 2, title: "이중민 과장님 수고 많았어요" },
+                { no: 3, title: "시간은 길지 않아요" }
+            ]
+        }
+    })
+</script>

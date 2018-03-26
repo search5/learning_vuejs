@@ -1,0 +1,23 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="hello">
+    <keep-alive>
+        <component :is="child1" v-if="show"></component>
+    </keep-alive>
+</div>
+
+<script>
+    var Child = {
+        template: '<div>Child activated 이벤트 훅 테스트</div>',
+        activated: function () {
+            console.log("Child activated 이벤트가 호출되었습니다.");
+        }
+    }
+
+    var vm = new Vue({
+        el: "#hello",
+        data: {
+            child1: Child,
+            show: false
+        }
+    });
+</script>

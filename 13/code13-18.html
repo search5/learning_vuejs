@@ -1,0 +1,44 @@
+<script src="http://unpkg.com/vue"></script>
+<script src="http://unpkg.com/vuex"></script>
+<script>
+    function getData() {
+        return new Promise((resolve, reject) => {
+            setTimeout(function () {
+                console.log("2초뒤 getData 함수 호출됨");
+                resolve();
+            }, 2000);
+        });
+    }
+
+    function getOtherData() {
+        return new Promise((resolve, reject) => {
+            setTimeout(function () {
+                console.log("3초뒤 getOtherData 함수 호출됨");
+                resolve();
+            }, 3000);
+        });
+    }
+
+    const store = new Vuex.Store({
+        state: {
+            count: 0
+        },
+        mutations: {
+            gotData(state) {
+                console.log("gotData 변이 호출됨");
+            },
+            gotOtherData(state) {
+                console.log("gotOtherData 호출됨");
+            }
+        },
+        actions: {
+            async actionA({ commit }) {
+                commit('gotData', await getData())
+            },
+            async actionB({ dispatch, commit }) {
+                await dispatch('actionA') // actionA가 끝나기를 기다립니다.
+                commit('gotOtherData', await getOtherData())
+            }
+        }
+    })
+</script>

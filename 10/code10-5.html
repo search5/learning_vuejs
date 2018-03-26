@@ -1,0 +1,19 @@
+<meta charset="utf-8">
+<script src="https://unpkg.com/vue"></script>
+<div id="app-5">
+    <p>{{ message }}</p>
+    <button v-on:click="reverseMessage">메시지 뒤집기</button>
+</div>
+<script>
+    var app5 = new Vue({
+        el: '#app-5',
+        data: {
+            message: 'Vue.js를 배운 건 좋은 선택입니다.'
+        },
+        methods: {
+            reverseMessage: function () {
+                this.message = this.message.split('').reverse().join('');
+            }
+        }
+    });
+</script>

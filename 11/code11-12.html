@@ -1,0 +1,15 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <select v-model="selected">
+        <option v-bind:value="'한글'">123</option>
+        <option v-bind:value="456">456</option>
+    </select>
+</div>
+<script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            selected: "한글"
+        }
+    });
+</script>

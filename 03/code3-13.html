@@ -1,0 +1,16 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <p v-bind:id="p_id">{{ hello }}</p>
+    <p>살고 계신 곳은<strong>{{ live_city }}</strong>이시군요.</p>
+    <input type="text" name="live_city" v-model="live_city">
+</div>
+<script>
+new Vue({
+    el: "#app",
+    data: {
+        hello: "안녕하세요. 독자여러분!",
+        live_city: "",
+        p_id: "p_tag_id"
+    }
+});
+</script>

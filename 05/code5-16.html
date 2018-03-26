@@ -1,0 +1,12 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <div v-html="rawHtml"></div>
+</div>
+<script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            rawHtml: "Hello <b>Vue.js</b>"
+        }
+    });
+</script>

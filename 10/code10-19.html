@@ -1,0 +1,14 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <input v-on:keyup.enter="submit">
+</div>
+<script>
+    var app = new Vue({
+        el: "#app",
+        methods: {
+            submit: function () {
+                console.log("[Enter] 키가 떼어집니다.");
+            }
+        }
+    });
+</script>

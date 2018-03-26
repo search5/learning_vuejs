@@ -1,0 +1,35 @@
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vuex"></script>
+<div id="app"></div>
+<script>
+    const store = new Vuex.Store({
+        state: {
+            count: 0
+        },
+        mutations: {
+            increment(state) {
+                state.count++
+            }
+        }
+    })
+
+    const Counter = {
+        template: '<div>{{ count }}</div>',
+        computed: {
+            count() {
+                return store.state.count
+            }
+        }
+    }
+
+    const app = new Vue({
+        store,
+        el: '#app',
+        components: { Counter },
+        template: `
+            <div class="app">
+            <counter></counter>
+            </div>
+        `
+    })
+</script>

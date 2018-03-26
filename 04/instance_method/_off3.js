@@ -1,0 +1,1 @@
+vm.$off(['hello', 'java', 'react']);

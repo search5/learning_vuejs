@@ -1,0 +1,22 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="example">
+    <system></system>
+</div>
+<script>
+    Vue.component('system', {
+        props: {
+            propB: {
+                type: Number,
+                required: true,
+                default: 20
+            },
+        },
+        render: function (h) {
+            return h('span', this.$slots.default);
+        }
+    });
+
+    new Vue({
+        el: '#example'
+    });
+</script>

@@ -1,0 +1,27 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <ul>
+        <li v-for="entry in items" v-if="entry.location == 'KR'">{{ entry.name }}</li>
+    </ul>
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            items: [{
+                name: 'KAKAO',
+                location: 'KR'
+            }, {
+                name: 'HANBIT MEDIA',
+                location: 'KR'
+            }, {
+                name: 'INSIGNAL',
+                location: 'KR'
+            }, {
+                name: 'SC International',
+                location: 'England'
+            }
+            ]
+        }
+    });
+</script>

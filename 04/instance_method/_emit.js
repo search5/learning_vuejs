@@ -1,0 +1,1 @@
+vm.$emit('hello');

@@ -1,0 +1,1 @@
+document.querySelector("div#hello").appendChild(vm.$el);

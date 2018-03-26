@@ -1,0 +1,16 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="demo">{{ fullName }}</div>
+<script>
+    var vm = new Vue({
+        el: '#demo',
+        data: {
+            firstName: 'Foo',
+            lastName: 'Bar'
+        },
+        computed: {
+            fullName: function () {
+                return this.firstName + ' ' + this.lastName
+            }
+        }
+    });
+</script>

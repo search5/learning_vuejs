@@ -1,0 +1,23 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <child-component>
+        {{ message }}
+    </child-component>
+</div>
+<script>
+    new Vue({
+        el: "#app",
+        components: {
+            'child-component': {
+                render: function (h) {
+                    return h.createElement('span', this.$slot.default);
+                },
+                data: function () {
+                    return {
+                        message: '안녕하세요.'
+                    }
+                }
+            }
+        }
+    });
+</script>

@@ -1,0 +1,20 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="example">
+    <p>캐싱된 시간: {{ now }}</p>
+    <p ref="tester"></p>
+</div>
+<script>
+    var vm = new Vue({
+        el: '#example',
+        computed: {
+            now: function () {
+                return Date.now()
+            }
+        },
+        methods: {
+            show: function () {
+                this.$refs.tester.innerHTML = Date.now();
+            }
+        }
+    });
+</script>

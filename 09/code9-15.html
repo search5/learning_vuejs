@@ -1,0 +1,17 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <p v-bind:style="styleObject">1</p>
+</div>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        computed: {
+            styleObject: function () {
+                return {
+                    'margin-before': '4em',
+                    background: 'blue'
+                };
+            }
+        }
+    });
+</script>

@@ -1,0 +1,15 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <input type="text" v-on:keyup.numpad7="doThat">
+</div>
+<script type="text/javascript">
+    Vue.config.keyCodes.numpad7 = 103;
+    new Vue({
+        el: "#app",
+        methods: {
+            doThat: function () {
+                console.log("숫자 키패드의 7을 눌렀습니다.");
+            }
+        }
+    });
+</script>

@@ -1,0 +1,22 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="example">
+    <p>{{ show() }}</p>
+</div>
+<script>
+    var vm = new Vue({
+        el: '#example',
+        data: {
+            msg: "Vue는 최고!"
+        },
+        computed: {
+            msg_reverse: function () {
+                return this.msg.split('').reverse().join('');
+            }
+        },
+        methods: {
+            show: function () {
+                return this.msg.split('').reverse().join('');
+            }
+        }
+    });
+</script>

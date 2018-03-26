@@ -1,0 +1,20 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="example-2">
+    <button v-on:click="greet($event)">Greet</button>
+</div>
+<script>
+    var example2 = new Vue({
+        el: '#example-2',
+        data: {
+            name: 'Vue.js'
+        },
+        methods: {
+            greet: function (event) {
+                alert('Hello ' + this.name + '!')
+                if (event) {
+                    alert(event.target.tagName)
+                }
+            }
+        }
+    });
+</script>

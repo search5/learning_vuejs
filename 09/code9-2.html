@@ -1,0 +1,22 @@
+<script src="https://unpkg.com/vue"></script>
+<style type="text/css">
+    div.active {
+        border: solid 1px blue;
+    }
+
+    div.text-danger {
+        color: red;
+    }
+</style>
+<div id="app">
+    <div class="static" v-bind:class="{ active: isActive, 'text-danger': hasError }">모든 클래스가 적용되었습니다.</div>
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            isActive: true,
+            hasError: true
+        }
+    });
+</script>

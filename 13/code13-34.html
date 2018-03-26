@@ -1,0 +1,22 @@
+<script src="http://unpkg.com/vuex"></script>
+<script>
+    const myPlugin = store => {
+        // 저장소가 초기화 될 때 호출됩니다.
+        store.subscribe((mutation, state) => {
+            console.log(mutation);
+            console.log(state);
+        })
+    }
+
+    const store = new Vuex.Store({
+        state: {
+            happy: 40
+        },
+        mutations: {
+            happy_update(state) {
+                state.happy = 30
+            }
+        },
+        plugins: [myPlugin]
+    })
+</script>

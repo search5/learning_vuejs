@@ -1,0 +1,19 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <div style="background-color: magenta; width: 100px; height: 100px;" v-on:click="doMiddle">
+        <a href="http://www.google.com" v-on:click.prevent.stop="doThat">타임라인</a>
+    </div>
+</div>
+<script>
+    var app = new Vue({
+        el: "#app",
+        methods: {
+            doThat: function () {
+                console.log("이벤트가 발생했는데 stop 이벤트 수식어로 이벤트가 정지될까요?");
+            },
+            doMiddle: function () {
+                console.log("doMiddle 이벤트가 발생했습니다.");
+            }
+        }
+    });
+</script>

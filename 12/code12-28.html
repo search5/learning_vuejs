@@ -1,0 +1,44 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <currency-input v-model="total"></currency-input>
+</div>
+<script>
+    Vue.component('currency-input', {
+        template: '\
+    <span>\
+      $\
+      <input\
+        ref="input"\
+        v-bind:value="value"\
+        v-on:input="updateValue($event.target.value)">\
+    </span>',
+        props: ['value'],
+        methods: {
+            // 값을 직접 업데이트하는 대신 이 메서드를 사용하여
+            // 입력 값 서식을 지정하고 배치할 수 있습니다.
+            updateValue: function (value) {
+                var formattedValue = value
+                    // 공백을 제거합니다.
+                    .trim()
+                    // 소수 자릿수 두 자리로 줄입니다.
+                    .slice(
+                        0,
+                        value.indexOf('.') === -1 ? value.length : value.indexOf('.') + 3)
+                // 값이 아직 정규화되지 않았다면
+                // 이를 수동으로 재정의해 조건을 충족시킵니다.
+                if (formattedValue !== value) {
+                    this.$refs.input.value = formattedValue
+                }
+                // 입력 이벤트로 숫자 값을 내보냅니다.
+                this.$emit('input', Number(formattedValue))
+            }
+        }
+    })
+
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            total: 0
+        }
+    });
+</script>

@@ -1,0 +1,31 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <app-layout>
+        <h1 slot="header">여기에 페이지 제목이 위치합니다.</h1>
+
+        <p>메인 컨텐츠 단락입니다.</p>
+        <p>하나 더 있습니다.</p>
+
+        <p slot="footer">여기는 연락처 정보가 위치합니다.</p>
+    </app-layout>
+</div>
+<script>
+    Vue.component('app-layout', {
+        template: `\
+    <div class="container">\
+      <header>\
+        <slot name="header"></slot>\
+      </header>\
+      <main>\
+        <slot></slot>\
+      </main>\
+      <footer>\
+        <slot name="footer"></slot>\
+      </footer>\
+    </div>`
+    });
+
+    var vm = new Vue({
+        el: '#app'
+    });
+</script>

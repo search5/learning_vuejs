@@ -1,0 +1,31 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="example">
+    <system></system>
+</div>
+<script>
+    Vue.component('system', {
+        props: {
+            propC: {
+                type: Number,
+                default: function () {
+                    return 10;
+                }
+            },
+            propD: {
+                type: Number,
+                default: 20
+            },
+        },
+        render: function (h) {
+            return h('div', [
+                h('span', 'prop-c / ' + this.propC),
+                h('br'),
+                h('span', 'prop-d / ' + this.propD)
+            ]);
+        }
+    });
+
+    new Vue({
+        el: '#example'
+    });
+</script>

@@ -1,0 +1,26 @@
+<script src="http://unpkg.com/vue"></script>
+<script src="http://unpkg.com/vuex"></script>
+<script>
+    const store = new Vuex.Store({
+        state: {
+            count: 0
+        },
+        mutations: {
+            increment(state) {
+                state.count++
+            }
+        },
+        actions: {
+            increment(context) {
+                context.commit('increment')
+            }
+        }
+    })
+
+    var vm = new Vue({
+        store: store,
+        methods: {
+            ...Vuex.mapActions({ add: 'increment' })
+        }
+    });
+</script>

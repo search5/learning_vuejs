@@ -1,0 +1,14 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <input v-on:keydown.tab="tabed">
+</div>
+<script>
+    var app = new Vue({
+        el: "#app",
+        methods: {
+            tabed: function () {
+                console.log("[Tab] 키를 누르셨습니다.");
+            }
+        }
+    });
+</script>

@@ -1,0 +1,12 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <button v-bind:disabled="isButtonDisabled">Button</button>
+</div>
+<script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            isButtonDisabled: true
+        }
+    });
+</script>

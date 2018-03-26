@@ -1,0 +1,19 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <span>{{ a }}</span>
+</div>
+<script>
+    function cb(new_val, old_val) {
+        console.log(new_val);
+        console.log(old_val);
+    }
+
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            a: 1
+        }
+    });
+
+    var watcher = vm.$watch('a', cb);
+</script>

@@ -1,0 +1,17 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    {{ write_date | date('YYYY-MM-DD HH:mm:ss') }}
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            write_date: new Date()
+        },
+        filters: {
+            date: function (entry, format) {
+                return dateFns.format(entry, format);
+            }
+        }
+    });
+</script>

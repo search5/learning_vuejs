@@ -1,0 +1,14 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <input type="button" v-on:contextmenu="right_btn" value="마우스 오른쪽">
+</div>
+<script>
+    new Vue({
+        el: "#app",
+        methods: {
+            right_btn: function () {
+                console.log("마우스 오른쪽 버튼을 눌렀어요.");
+            }
+        }
+    });
+</script>

@@ -1,0 +1,28 @@
+<script src="http://unpkg.com/vue"></script>
+<script src="http://unpkg.com/vuex"></script>
+<script>
+    const store = new Vuex.Store({
+        state: {
+            count: 0
+        },
+        mutations: {
+            increment(state) {
+                state.count++
+            },
+
+            someMutation(state) {
+                console.log('변이 커밋');
+            }
+        },
+        actions: {
+            decrement({ commit }) {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        commit('someMutation')
+                        resolve()
+                    }, 1000)
+                })
+            }
+        }
+    })
+</script>

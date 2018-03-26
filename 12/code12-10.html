@@ -1,0 +1,15 @@
+<meta charset="utf-8">
+<script src="https://unpkg.com/vue"></script>
+<dl id="app">
+  <!-- vue-js 컴포넌트의 인스턴스 만들기 -->
+  <vue-js></vue-js>
+</dl>
+<script>
+Vue.component('vue-js', {
+  template: '<dt>Vue.js ist eine sehr schöne und einfache Bibliothek.</dt>'
+});
+
+new Vue({
+    el: "#app"
+})
+</script>

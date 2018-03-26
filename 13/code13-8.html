@@ -1,0 +1,39 @@
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vuex"></script>
+<div id="app">
+    vm computed count: {{ count }}
+    <br> vm computed countAlias: {{ countAlias }}
+    <br> vm computed countPlusLocalState: {{ countPlusLocalState }}
+</div>
+<script>
+    const store = new Vuex.Store({
+        state: {
+            count: 0
+        },
+        mutations: {
+            increment(state) {
+                state.count++
+            }
+        }
+    })
+
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            localCount: 2
+        },
+        store,
+        computed: Vuex.mapState({
+            // 화살표 함수는 코드를 매우 간결하게 만들어 줍니다!
+            count: state => state.count,
+
+            // 문자열 값 'count'를 전달하는 것은 `state => state.count`와 같습니다.
+            countAlias: 'count',
+
+            // `this`를 사용하여 로컬 상태에 액세스하려면 일반적인 함수를 사용해야합니다
+            countPlusLocalState(state) {
+                return state.count + this.localCount
+            }
+        })
+    });
+</script>

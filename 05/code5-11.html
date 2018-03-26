@@ -1,0 +1,12 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <span v-once>다시는 변경하지 않습니다: {{ msg }}</span>
+</div>
+<script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "Hello <b>Vue.js</b>"
+        }
+    });
+</script>

@@ -1,0 +1,13 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <my-component></my-component>
+</div>
+<script>
+    Vue.component('myComponent', {
+        template: '<span>myComponent 컴포넌트는 my-component로 호출해야 합니다</span>'
+    })
+
+    new Vue({
+        el: '#app'
+    })
+</script>

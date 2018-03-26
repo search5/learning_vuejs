@@ -1,0 +1,29 @@
+<script src="http://unpkg.com/vuex"></script>
+<script>
+    function createSSEPlugin(evt_url, post_url) {
+        return store => {
+            const evtSource = new EventSource(evt_url);
+
+            evtSource.onmessage = function (resp) {
+                store.commit('receiveData', resp.data);
+            };
+
+            store.subscribe((mutation, state) => {
+                if (mutation.type === 'UPDATE_DATA') {
+                    //socket.emit('update', mutation.payload);
+                    qwest.post(post_url, state).then(function (xhr, response) {
+                        console.log("서버에 정상적으로 상태 값이 전송되었습니다");
+                    });
+                }
+            });
+        };
+    }
+
+    const plugin = createSSEPlugin('http://localhost:8000/sse', 'http://localhost:8000/update');
+
+    const store = new Vuex.Store({
+        state,
+        mutations,
+        plugins: [plugin]
+    });
+</script>

@@ -1,0 +1,17 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    {{ price | currency }}
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            price: 9999.87
+        },
+        filters: {
+            currency: function (text) {
+                return accounting.formatMoney(text);
+            }
+        }
+    });
+</script>

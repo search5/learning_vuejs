@@ -1,0 +1,18 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <div v-for="(value, key) in object">
+        {{ key }}: {{ value }}
+    </div>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            object: {
+                firstName: 'Joongmin',
+                lastName: 'Lee',
+                age: 38
+            }
+        }
+    });
+</script>

@@ -1,0 +1,14 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <input type="radio" v-model="pick" v-bind:value="a">
+    <span>{{ pick }}</span>
+</div>
+<script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            pick: "",
+            a: "선택됨"
+        }
+    });
+</script>

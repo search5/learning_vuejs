@@ -1,0 +1,14 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <input type="button" v-on:click.once="doThat" value="once one click">
+</div>
+<script>
+    var app = new Vue({
+        el: "#app",
+        methods: {
+            doThat: function() {
+                console.log("한 번만 클릭할 수 있습니다.");
+            }
+        }
+    });
+</script>

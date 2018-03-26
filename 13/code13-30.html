@@ -1,0 +1,47 @@
+<script src="http://unpkg.com/vue"></script>
+<script src="http://unpkg.com/vuex"></script>
+<script>
+    const moduleA = {
+        state: { count: 0 },
+        mutations: {
+            increment(state) {
+                state.count++
+            }
+        },
+
+        getters: {
+            doubleCount(state) {
+                return state.count * 2
+            }
+        }
+    }
+
+    const moduleB = {
+        state: { count2: 10 },
+        mutations: {
+            increment2(state) {
+                state.count2++
+            }
+        },
+
+        getters: {
+            doubleCount2(state, b, c, d) {
+                return state.count2 * 2
+            }
+        }
+    }
+
+    const store = new Vuex.Store({
+        modules: {
+            a: moduleA,
+            b: moduleB
+        }
+    });
+
+    var vm = new Vue({
+        store: store,
+        computed: {
+            ...Vuex.mapGetters(['doubleCount', 'doubleCount2'])
+        }
+    });
+</script>

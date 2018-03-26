@@ -1,0 +1,15 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <!-- Ctrl + Click -->
+    <div @click.ctrl="doSomething">Do something</div>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        methods: {
+            doSomething: function () {
+                console.log("[Ctrl] 키를 같이 눌렀습니다.");
+            }
+        }
+    });
+</script>

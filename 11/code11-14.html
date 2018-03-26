@@ -1,0 +1,17 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <input type="text" v-model.number="msg" v-on:keyup="changed">
+</div>
+<script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            msg: ""
+        },
+        methods: {
+            changed: function (event) {
+                console.log(typeof this.msg);
+            }
+        }
+    });
+</script>

@@ -1,0 +1,19 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="example-2">
+    <child message='하나'></child>
+    <child message='둘'></child>
+    <child message='셋'></child>
+</div>
+<script>
+    Vue.component('child', {
+        // props 옵션 정의
+        props: ['message'],
+        // 데이터와 마찬가지로 prop 속성은 템플릿 안에서 사용할 수 있으며
+        // vm의 this.message로 사용할 수 있습니다.
+        template: '<span>{{ message }}</span>'
+    });
+
+    new Vue({
+        el: '#example-2'
+    });
+</script>

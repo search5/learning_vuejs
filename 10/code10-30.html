@@ -1,0 +1,14 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <button @click.meta="onMetaClick">A</button>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        methods: {
+            onMetaClick: function () {
+                console.log("Meta 키를 함께 누를 때만 실행합니다.");
+            }
+        }
+    });
+</script>

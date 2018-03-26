@@ -1,0 +1,26 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <input type="text" v-model="even">
+    <ul>
+        <li v-for="n in evenNumbers">{{ n }}</li>
+    </ul>
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            numbers: [1, 2, 3, 4, 5],
+            even: "Y"
+        },
+        computed: {
+            evenNumbers: function () {
+                var even = this.even;
+
+                return this.numbers.filter(function (number) {
+                    if (even === "Y") return number % 2 === 0
+                    else return number % 2 !== 0;
+                });
+            }
+        }
+    });
+</script>

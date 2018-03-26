@@ -1,0 +1,14 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <span>{{ "hello" | capitalize }}</span>
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        filters: {
+            capitalize: function (text) {
+                return text[0].toUpperCase() + text.slice(1)
+            }
+        }
+    });
+</script>

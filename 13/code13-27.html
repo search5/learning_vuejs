@@ -1,0 +1,19 @@
+<script src="http://unpkg.com/vuex"></script>
+<script>
+    var store = new Vuex.Store({
+        state: {
+            todos: [
+                { id: 1, text: '논문 쓰기', done: false },
+                { id: 2, text: '이중민 과장님 힘들게 하기', done: true }
+            ]
+        },
+        getters: {
+            doneTodos: state => {
+                return state.todos.filter(todo => todo.done)
+            },
+            doneTodosCount: (state, getters) => {
+                return getters.doneTodos.length
+            }
+        }
+    });
+</script>

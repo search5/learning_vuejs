@@ -1,0 +1,13 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="hello"></div>
+
+<script>
+    var vm = new Vue({
+        template: '<div>{{ msg }}</div>',
+        data: {
+            msg: "Hello Vue.js"
+        }
+    });
+
+    vm.$mount("#hello", false);
+</script>

@@ -1,0 +1,17 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <button v-on="{ mousedown: doThis, mouseup: doThat }">객체로 이벤트 리스너 추가</button>
+</div>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            doThis: function () {
+                console.log("마우스가 눌렸어요");
+            },
+            doThat: function () {
+                console.log("마우스에서 손을 뗐어요");
+            }
+        }
+    });
+</script>

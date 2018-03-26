@@ -1,0 +1,16 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <span>{{ i | multiply_number }}</span>
+</div>
+<script>
+    Vue.filter('multiply_number', function (value) {
+        return value * 3;
+    });
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            i: 5
+        }
+    });
+</script>

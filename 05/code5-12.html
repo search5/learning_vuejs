@@ -1,0 +1,16 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <div v-once>
+        <h1>제목</h1>
+        <p v-bind:dir="dir">{{ msg }}</p>
+    </div>
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            msg: '오늘 날씨가 참 좋네요',
+            dir: "lt"
+        }
+    });
+</script>

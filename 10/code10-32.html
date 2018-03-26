@@ -1,0 +1,17 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <button @click.exact.alt.shift="onAltShfit_Click" @click.exact.alt="onAlt_Click">A</button>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        methods: {
+            onAlt_Click: function () {
+                console.log("Clicked Alt");
+            },
+            onAltShfit_Click: function () {
+                console.log("Clicked Alt + Shift");
+            }
+        }
+    });
+</script>

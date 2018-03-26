@@ -1,0 +1,18 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="example">
+    <p>원본 메시지: "{{ message }}"</p>
+    <p>뒤집히도록 계산된 메시지: "{{ reversedMessage }}"</p>
+</div>
+<script>
+    var vm = new Vue({
+        el: '#example',
+        data: {
+            message: '안녕하세요'
+        },
+        computed: {
+            reversedMessage: function () {
+                return this.message.split('').reverse().join('')
+            }
+        }
+    });
+</script>

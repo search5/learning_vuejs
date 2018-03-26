@@ -1,0 +1,14 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <input @keyup.alt.c="clear">
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        methods: {
+            clear: function () {
+                console.log("[Alt] 키와 [C] 키를 같이 눌렀습니다.");
+            }
+        }
+    });
+</script>

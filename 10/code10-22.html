@@ -1,0 +1,14 @@
+<script src="https://unpkg.com/vue"></script>
+<div id="app">
+    <input type="text" v-on:keyup.page-down="doThat">
+</div>
+<script type="text/javascript">
+    new Vue({
+        el: "#app",
+        methods: {
+            doThat: function () {
+                console.log("page-down 키를 눌렀습니다.");
+            }
+        }
+    });
+</script>

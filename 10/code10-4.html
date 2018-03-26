@@ -1,0 +1,10 @@
+<meta charset="utf-8">
+<p id="p_title">안녕하세요. 여러분. Vue.js를 배우시길 잘하셨을 겁니다</p>
+<button id="btn_title">메시지 뒤집기</button>
+<script>
+    document.querySelector("#btn_title").onclick = function (e) {
+        var old_str = document.querySelector("#p_title").innerHTML;
+        var reverse_str = old_str.split('').reverse().join('');
+        document.querySelector("#p_title").innerHTML = reverse_str;
+    }
+</script>

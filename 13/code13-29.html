@@ -1,0 +1,32 @@
+<script src="http://unpkg.com/vue"></script>
+<script src="http://unpkg.com/vuex"></script>
+<script>
+    var store = new Vuex.Store({
+        state: {
+            todos: [
+                { id: 1, text: '논문 쓰기', done: false },
+                { id: 2, text: '교수님 죄송합니다', done: true }
+            ]
+        },
+        getters: {
+            doneTodos: state => {
+                return state.todos.filter(todo => todo.done)
+            },
+            doneTodosCount: (state, getters) => {
+                return getters.doneTodos.length
+            }
+        }
+    });
+
+    var vm = new Vue({
+        data: {
+            localCount: 2
+        },
+        store: store,
+        computed: {
+            ...Vuex.mapGetters({
+                doneCount: 'doneTodosCount'
+            })
+        }
+    });
+</script>
